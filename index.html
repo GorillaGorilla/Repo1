@@ -1,0 +1,18 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		function run() {
+			//get the input, append it to the end of a localhost URL and redirect the current window to this created URL.
+			var input = document.getElementById('input').value;
+			var url = 'http://127.0.0.1:3000/' + input;
+			window.location.href = url;					
+		}
+	</script>
+<body>
+	<!-- Some basic HTML stuff -->
+	<b>Enter a sentence to translate!</b><br />
+	<textarea rows = '4' cols = '50' id = 'input'></textarea>
+	<button type = 'button' onclick = 'run()'>Translate!</button>
+	<div id = 'translation'></div>
+</body>

@@ -1,12 +1,19 @@
 var fs = require('fs');
 
+var type = process.argv[3]
+
 fs.readdir(process.argv[2],function rf (err, list){
 // list is an array of strings holding pathnames
 //for each array element, split off last 3 characters
 // and if they != 2nd arg then remove from the array
 
-for (i = 2; i < list.length; i++){
-	console.log(list[i].length)
+for (i = 0; i < list.length; i++){
+
+	//var start = list[i].length - 3;
+	var end = list[i].split('.');
+	if (type == end[1]){
+		console.log(list[i])
+	}
 }
 
 

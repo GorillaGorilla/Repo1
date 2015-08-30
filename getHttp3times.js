@@ -22,18 +22,18 @@ function printResults(){
 
 function callback(response){
 	response.pipe(bl(function cb2(err, data){
-	if (err)
-	return console.error(err)
+		if (err)
+		return console.error(err)
 
 
 
 
 
-	results[i] = data.toString();
-	countR++
-	if (countR == 3){
-		printResults
-	}
+		results[i] = data.toString();
+		countR++
+		if (countR == 3){
+			printResults
+		}
 
 
 	}));

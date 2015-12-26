@@ -1,0 +1,19 @@
+cf logs TestAppEclispe --recent
+
+npm install express -save
+
+npm shrinkwrap
+
+login to bluemix:
+
+cf login -a api.ng.bluemix.net
+
+
+cf push -s cflinuxfs2
+
+
+---- How to calc tiers
+
+Return all tier prices and tier thresholds.
+
+depending on tier, it will be first Sum[i = 0 -> previous tier] : tier[i] - tier[i-1]*price[i]

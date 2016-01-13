@@ -25,16 +25,10 @@ function callback(response){
 		if (err)
 		return console.error(err)
 
-
-
-
-
 		results[i] = data.toString();
 		countR++
 		if (countR == 3){
 			printResults
 		}
-
-
 	}));
 }

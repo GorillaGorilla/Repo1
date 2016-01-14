@@ -12,9 +12,10 @@ fs.createReadStream(filePath)
   .pipe(unzip.Parse())
   .on('entry', function (entry) {
     var fileName = entry.path;
+    console.log(fileName);
     var type = entry.type; // 'Directory' or 'File'
     var size = entry.size;
-    if (fileName === "file4.zip") {
+    if (fileName === "C:/Users/IBM_ADMIN/Documents/GitHub/Repo1/unzip_file/file4.zip") {
 		console.log("should have worked");
       entry.pipe(fs.createWriteStream(destination));
     } else {

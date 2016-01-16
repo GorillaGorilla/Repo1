@@ -1,4 +1,5 @@
 // now working
+// script to download data tables from url, extract csv files from archives and rename
 var https = require('https');
 var fs = require('fs');
 var unzip = require('unzip');
@@ -10,7 +11,7 @@ var urlchunk4 = "&fileDate=";
 var urlchunk5 = "&jobId=1021&priceType=C&channelCode=A"
 var fullUrl = "https://w3-117.ibm.com/software/sales/passportadvantage/pricepub/user/DownloadCSV.do?regionCode=EMEA&fileCntryName=EURO&fileType=SSA&fileFormat=CSV&fileContentType=601&controlCode=&fileNamePrefix=Eurcountries&fileDate=2016-01-13&jobId=1070&priceType=C&channelCode=A"
 var path = "C:/Users/IBM_ADMIN/Documents/GitHub/Repo1/dl_file/";
-var fName = "file7.zip";
+var fName = undefined;
 //var filePath = undefined;
 var destination = path + "fold5";
 var urlC = undefined;
@@ -26,10 +27,12 @@ fileCntryName : "GBR"}
 ];
 
 for (i = 0; i < tableNames.length; i++){
+	// build strings for urls and file names
 	urlC = urlchunk1 + tableNames[i].region + urlchunk2 + tableNames[i].fileCntryName +
 	urlchunk3 + tableNames[i].fileNamePrefix + urlchunk4 + date + urlchunk5;
 	fName = tableNames[i].region + tableNames[i].fileNamePrefix + i + "new3.zip";
-	caller1(fName, urlC);
+
+	downloadWithGet(fName, urlC);
 }
 
 
@@ -59,7 +62,7 @@ function nextFunction(fName){
   	});
 }
 
-function caller1(fName, webAddress){
+function downloadWithGet(fName, webAddress){
 //	downloads from a url using a get request
 	https.get(webAddress, function(response){
 		var file = fs.createWriteStream(fName);

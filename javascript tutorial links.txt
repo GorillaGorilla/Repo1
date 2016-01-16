@@ -1,0 +1,18 @@
+http://yeoman.io/generators/ - generating a project (use angular - fullstack)
+jasmine.github.io/2.0/introduction.html - unit test framework
+https://docs.angularjs.org/guide/e2e-testing - e2e testing (uses jasmine as well) 
+
+
+
+
+Sure, can look at that. What immediately comes to mind is probably inheritance https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+Also the decorator pattern is a good one .. this is a really good article for writing common code that can be extended by other objects - http://addyosmani.com/blog/decorator-pattern/
+
+
+
+
+https://www.youtube.com/watch?v=8aGhZQkoFbQ 
+
+
+Matt Dalton, who is fairly new to development (<1 year project experience) in the team recommends following: http://imskills.svl.ibm.com:8080/SkillsMatrix/student_track.jsp?track_id=198. He said ignore jquery and worklight stuff.

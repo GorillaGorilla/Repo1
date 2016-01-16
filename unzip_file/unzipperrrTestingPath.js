@@ -7,7 +7,7 @@ var fName = "file4.zip";
 var filePath = path + fName;
 var destination = path + "fold";
 
-
+var outputFile = fs.createWriteStream("testoutput.csv");
 var file = fs.createReadStream(filePath)
 .pipe(unzip.Parse())
 .on('entry', function (entry) {
@@ -15,8 +15,8 @@ var file = fs.createReadStream(filePath)
     console.log(fileName);
     var type = entry.type; // 'Directory' or 'File'
     var size = entry.size;
-
-    entry.autodrain();
+    entry.pipe(outputFile);
+    //entry.autodrain();
   });
 
 file.pipe(unzip.Extract({path : destination}));

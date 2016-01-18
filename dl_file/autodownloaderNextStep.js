@@ -31,7 +31,7 @@ for (i = 0; i < tableNames.length; i++){
 	urlC = urlchunk1 + tableNames[i].region + urlchunk2 + tableNames[i].fileCntryName +
 	urlchunk3 + tableNames[i].fileNamePrefix + urlchunk4 + date + urlchunk5;
 	fName = tableNames[i].region + tableNames[i].fileNamePrefix + i + "new3.zip";
-
+	console.log(urlC);
 	downloadWithGet(fName, urlC);
 }
 
